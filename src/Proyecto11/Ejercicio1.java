@@ -3,21 +3,29 @@ package Proyecto11;
 import java.util.Scanner;
 
 /*
- * Realizar un programa que acumule (sume) valores ingresados por teclado hasta ingresar el 9999 (no sumar dicho valor, indica que ha finalizado la carga).
- * Imprimir el valor acumulado e informar si dicho valor es cero, mayor a cero o menor a cero.
+ * Confeccionar un programa que lea n pares de datos, cada par de datos corresponde a la medida de la base y la altura de un triángulo. El programa deberá informar:
+ * a) De cada triángulo la medida de su base, su altura y su superficie.
+ * b) La cantidad de triángulos cuya superficie es mayor a 12.
  * */
 
 public class Ejercicio1 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        int valor, suma = 0;
-        do {
-            System.out.println("Digite el valor a sumar. Para salir digite 9999.");
-            valor = teclado.nextInt();
-            if (valor != 9999) {
-                suma = suma + valor;
+        int cantidad, mayores = 0;
+        System.out.println("Ingrese la cantidad de triángulos: ");
+        cantidad = teclado.nextInt();
+        for (int i = 1; i <= cantidad; i++) {
+            int altura, base, superficie;
+            System.out.println("Ingrese la base del triángulo " + i + ": ");
+            base = teclado.nextInt();
+            System.out.println("Ingrese la altura del triángulo " + i + ": ");
+            altura = teclado.nextInt();
+            superficie = (base * altura) / 2;
+            if (superficie > 12) {
+                mayores++;
             }
-        } while (valor != 9999);
-        System.out.println("El total de la suma es: " + suma);
+            System.out.println("La base del triángulo es " + base + ", y su altura es " + altura + ", superficie= " + superficie);
+        }
+        System.out.println("La cantidad de triángulos cuya superficie es mayor a 12 son " + mayores);
     }
 }
