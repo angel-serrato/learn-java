@@ -22,11 +22,7 @@ public class Ejercicio4 {
 
     public void verificar() {
         for (int i = 0; i < elementos.length; i++) {
-            mayor = elementos[0];
-            System.out.println("Elemento " + i + " = " + elementos[i]);
-            if (elementos[i] > mayor) {
-                valor = true;
-            } else {
+            if (elementos[i + 1] < elementos[i]) {
                 valor = false;
             }
         }
