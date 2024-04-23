@@ -26,6 +26,7 @@ public class Ejercicio1 {
     public void imprimir() {
         for (int i = 0; i < nombre.length; i++) {
             if (edad[i] >= 18) {
+                System.out.println("Los mayores de 18 años son:");
                 System.out.println(nombre[i] + "\t" + edad[i]);
             }
         }
@@ -34,5 +35,6 @@ public class Ejercicio1 {
     public static void main(String[] args) {
         Ejercicio1 vector = new Ejercicio1();
         vector.cargar();
+        vector.imprimir();
     }
 }
