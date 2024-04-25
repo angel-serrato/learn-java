@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Ejercicio1 {
     private Scanner teclado = new Scanner(System.in);
-    private int cantidad, menor;
+    private int cantidad, menor, contador;
     private int[] arreglo;
 
     public void cargar() {
@@ -25,10 +25,18 @@ public class Ejercicio1 {
         menor = arreglo[0];
         for (int i = 0; i < cantidad; i++) {
             if (arreglo[i] < menor) {
+                if (arreglo[i] == menor) {
+                    contador++;
+                }
                 menor = arreglo[i];
             }
         }
         System.out.println("El menor de todos los números es: " + menor);
+        if (contador > 1) {
+            System.out.println("El menor se repite dentro del vector.");
+        } else {
+            System.out.println("El menor no se repite dentro del vector.");
+        }
     }
 
     public static void main(String[] args) {
